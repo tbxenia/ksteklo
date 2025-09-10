@@ -1277,6 +1277,17 @@ nav.menu ul li a:hover {
 	margin-bottom: 10px;
 }
 
+.footer__develop {
+	display: flex;
+	gap: 5px;
+	align-items: baseline;
+}
+
+.footer__develop img {
+	height: 18px;
+	width: auto;
+}
+
 @media(max-width: 767px) {
 	.footer__content {
 		flex-wrap: wrap;
