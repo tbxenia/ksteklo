@@ -951,6 +951,10 @@ nav.menu ul li a:hover {
 	opacity: 1;
 }
 
+.swiper-pagination-lock {
+	display: none;
+}
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
 	background: #46B9D8;
 }
