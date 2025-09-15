@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			nextEl: '.projects-slider .slider__next',
 			prevEl: '.projects-slider .slider__prev',
 		},
+		pagination: {
+			el: '.projects-slider .slider__pagination',
+			clickable: true,
+			type: 'bullets',
+		},
 		autoplay: {
 			delay: 5000,
 			disableOnInteraction: false,
