@@ -126,4 +126,43 @@ document.addEventListener("DOMContentLoaded", () => {
 	phoneInputs.forEach((input) => {
 		Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
 	});
+
+	const list = document.getElementById('tags');
+
+if(list) {
+	const ninthItem = list.children[7];
+
+	const button = document.createElement('div');
+	button.textContent = 'Показать все!';
+	button.className = 'category__list-item show__more';
+
+	if (ninthItem) {
+	  ninthItem.parentNode.insertBefore(button, ninthItem.nextSibling);
+	} else {
+	  console.warn('war');
+	}
+	
+	function hideElementsAfterDiv(divId) {
+		const div = document.querySelector(divId);
+		
+		if (div) {
+			let nextSibling = div.nextElementSibling;
+			while (nextSibling) {
+				nextSibling.style.display = 'none';
+				nextSibling = nextSibling.nextElementSibling;
+			}
+		}
+	}
+	hideElementsAfterDiv('.show__more');
+	
+	 document.querySelector('.show__more').addEventListener('click', function () {
+		let tagsElements = document.querySelectorAll('.category__list ul li');
+		
+		tagsElements.forEach((element) => {
+			element.style.display = 'block';
+		});
+		
+		document.querySelector('.show__more').remove();
+	});
+}
 });
