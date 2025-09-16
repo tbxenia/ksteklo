@@ -1124,6 +1124,18 @@ nav.menu ul li a:hover {
 	padding: 0 10px;
 }
 
+.reviews__list:not(.swiper) {
+	display: flex;
+	row-gap: 20px;
+	column-gap: 20px;
+	flex-wrap: wrap;
+}
+
+
+.reviews__list:not(.swiper) .item {
+	width: calc(1/2*100% - (1 - 1/2)*20px);
+	padding: 0;
+}
 
 .reviews__item {
 	box-shadow: 0 0 10px 0 #5CC9E6CC;
@@ -1167,6 +1179,12 @@ nav.menu ul li a:hover {
 	display: flex;
 	justify-content: center;
 	margin-top: 30px;
+}
+
+@media(max-width: 767px) {
+	.reviews__list:not(.swiper) .item {
+		width: 100%;
+	}
 }
 
 @media(max-width: 576px) {
@@ -1951,4 +1969,45 @@ main {
 .splide__list .splide__slide {
     display: flex;
     justify-content: center;
+}
+
+.reviews__send-button {
+	margin-bottom: 25px;
+}
+
+.popup form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.popup .form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.popup .form-field input[type="text"],
+.popup .form-field input[type="tel"],
+.popup .form-field textarea {
+	border: 1px solid var(--color-accent);
+	border-radius: 10px;
+	height: 40px;
+	padding: 10px 20px;
+}
+
+.popup .form-field textarea {
+	height: 120px;
+	resize: none;
+}
+
+.popup .form-field input[type="text"]:focus,
+.popup .form-field input[type="tel"]:focus,
+.popup .form-field textarea:focus {
+	outline: none;
+	border: 1px solid var(--color-accent-dark);
+}
+
+.popup .form-field input[type="checkbox"] + label::before {
+	border: 1px solid var(--color-accent-dark);
 }
