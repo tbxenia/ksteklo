@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
 		<link rel="stylesheet" href="./assets/css/fancybox.css">
 		<link rel="stylesheet" href="./assets/css/splide.min.css">
+		<link rel="stylesheet" href="./assets/css/popup.css">
 		<link rel="stylesheet" href="./assets/css/main.css">
 		
 	</head>
@@ -43,7 +44,7 @@
 					</div>
 				</div>
 				<div class="header__buttons">
-					<a href="#" class="btn">Обратный звонок</a>
+					<button data-modal="call" class="btn js-open-modal">Обратный звонок</button>
 				</div>
 			</div>
 			<nav class="menu">
@@ -166,7 +167,7 @@
 								Цена: <span>от 65 000 руб.</span>
 							</div>
 							<div class="detail__info-button">
-								<button class="btn">Заказать расчет</button>
+								<button data-modal="product" class="btn js-open-modal">Заказать расчет</button>
 							</div>
 						</div>
 					</div>
@@ -246,7 +247,7 @@
 									<label><input type="text" placeholder="Ваше имя"></label>
 								</div>
 								<div class="form-field">
-									<label><input type="tel" placeholder="Ваш телефон"></label>
+									<label><input type="tel" autocomplete="tel" placeholder="Ваш телефон"></label>
 								</div>
 							</div>
 							<div class="form__content-col">
@@ -571,11 +572,103 @@
 				</ul>
 			</div>
 		</div>
+		<div class="popup" id="popup-review" data-modal="reviews">
+			<div class="popup__inner">
+				<div class="section__title popup__title">
+					Оставить отзыв
+				</div>
+				<form>
+					<div class="form-field">
+						<label for="username">ФИО</label>
+						<input id="username" type="text" placeholder="ФИО" required>
+					</div>
+					<div class="form-field">
+						<label for="usermessage">Ваш отзыв</label>
+						<textarea id="usermessage" value="Ваш отзыв" required></textarea>
+					</div>
+					<div class="form-field">
+						<button type="submit" class="btn">Отправить</button>
+					</div>
+					<div class="form-field">
+						<input type="checkbox" id="usercheckbox-review">
+						<label for="usercheckbox-review">Я принимаю условия пользовательского соглашения и даю согласие на обработку персональных данных</label>
+					</div>
+				</form>
+				<div class="close">
+					<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.28033 0.21967C0.987437 -0.0732233 0.512563 -0.0732233 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L3.93934 5L0.21967 8.71967C-0.0732233 9.01256 -0.0732233 9.48744 0.21967 9.78033C0.512563 10.0732 0.987437 10.0732 1.28033 9.78033L5 6.06066L8.71967 9.78033C9.01256 10.0732 9.48744 10.0732 9.78033 9.78033C10.0732 9.48744 10.0732 9.01256 9.78033 8.71967L6.06066 5L9.78033 1.28033C10.0732 0.987437 10.0732 0.512563 9.78033 0.21967C9.48744 -0.0732233 9.01256 -0.0732233 8.71967 0.21967L5 3.93934L1.28033 0.21967Z" fill="black"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="popup" id="popup-call" data-modal="call">
+			<div class="popup__inner">
+				<div class="section__title popup__title">
+					Обратный звонок
+				</div>
+				<form>
+					<div class="form-field">
+						<label for="username-call">ФИО</label>
+						<input id="username-call" type="text" placeholder="ФИО" required>
+					</div>
+					<div class="form-field">
+						<label for="userphone-call">Телефон</label>
+						<input id="userphone-call" type="tel" autocomplete="tel" placeholder="Телефон" required>
+					</div>
+					<div class="form-field">
+						<button type="submit" class="btn">Заказать звонок</button>
+					</div>
+					<div class="form-field">
+						<input type="checkbox" id="usercheckbox-call">
+						<label for="usercheckbox-call">Я принимаю условия пользовательского соглашения и даю согласие на обработку персональных данных</label>
+					</div>
+				</form>
+				<div class="close">
+					<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.28033 0.21967C0.987437 -0.0732233 0.512563 -0.0732233 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L3.93934 5L0.21967 8.71967C-0.0732233 9.01256 -0.0732233 9.48744 0.21967 9.78033C0.512563 10.0732 0.987437 10.0732 1.28033 9.78033L5 6.06066L8.71967 9.78033C9.01256 10.0732 9.48744 10.0732 9.78033 9.78033C10.0732 9.48744 10.0732 9.01256 9.78033 8.71967L6.06066 5L9.78033 1.28033C10.0732 0.987437 10.0732 0.512563 9.78033 0.21967C9.48744 -0.0732233 9.01256 -0.0732233 8.71967 0.21967L5 3.93934L1.28033 0.21967Z" fill="black"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="popup" id="popup-product" data-modal="product">
+			<div class="popup__inner">
+				<div class="section__title popup__title">
+					Заказать расчет
+				</div>
+				<form>
+					<div class="form-field">
+						<label for="username-product">ФИО</label>
+						<input id="username-product" type="text" placeholder="ФИО" required>
+					</div>
+					<div class="form-field">
+						<label for="userphone-product">Телефон</label>
+						<input id="userphone-product" type="tel" autocomplete="tel" placeholder="Телефон" required>
+					</div>
+					<div class="form-field">
+						<label for="usermessage-product">Комментарий</label>
+						<textarea id="usermessage-product" value="Комментарий" required></textarea>
+					</div>
+					<div class="form-field">
+						<button type="submit" class="btn">Заказать расчет</button>
+					</div>
+					<div class="form-field">
+						<input type="checkbox" id="usercheckbox-product">
+						<label for="usercheckbox-product">Я принимаю условия пользовательского соглашения и даю согласие на обработку персональных данных</label>
+					</div>
+				</form>
+				<div class="close">
+					<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.28033 0.21967C0.987437 -0.0732233 0.512563 -0.0732233 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L3.93934 5L0.21967 8.71967C-0.0732233 9.01256 -0.0732233 9.48744 0.21967 9.78033C0.512563 10.0732 0.987437 10.0732 1.28033 9.78033L5 6.06066L8.71967 9.78033C9.01256 10.0732 9.48744 10.0732 9.78033 9.78033C10.0732 9.48744 10.0732 9.01256 9.78033 8.71967L6.06066 5L9.78033 1.28033C10.0732 0.987437 10.0732 0.512563 9.78033 0.21967C9.48744 -0.0732233 9.01256 -0.0732233 8.71967 0.21967L5 3.93934L1.28033 0.21967Z" fill="black"/>
+					</svg>
+				</div>
+			</div>
+		</div>
 		<div class="overlay"></div>
 		<script src="./assets/js/fancybox.umd.js"></script>
 		<script src="./assets/js/swiper-bundle.min.js"></script>
 		<script src="./assets/js/inputmask.min.js"></script>
 		<script src="./assets/js/splide.js"></script>
+		<script src="./assets/js/popup.js"></script>
 		<script src="./assets/js/main.js"></script>
 	</body>
 </html>
