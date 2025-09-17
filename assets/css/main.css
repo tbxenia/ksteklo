@@ -2013,6 +2013,18 @@ main {
 	border: 1px solid var(--color-accent-dark);
 }
 
+.popup .form-field button {
+	margin: 0 auto;
+}
+
+.popup .form-field a {
+	text-decoration: underline;
+}
+
+.popup .form-field a:hover {
+	text-decoration: none;
+}
+
 .category__list-item.show__more.active {
 	order: 9;
 }
