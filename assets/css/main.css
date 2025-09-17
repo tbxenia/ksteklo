@@ -1125,7 +1125,7 @@ nav.menu ul li a:hover {
 	padding: 0 10px;
 }
 
-.reviews__list:not(.swiper) {
+.reviews__list:not(.swiper-wrapper) {
 	display: flex;
 	row-gap: 20px;
 	column-gap: 20px;
@@ -1133,7 +1133,7 @@ nav.menu ul li a:hover {
 }
 
 
-.reviews__list:not(.swiper) .item {
+.reviews__list:not(.swiper-wrapper) .item {
 	width: calc(1/2*100% - (1 - 1/2)*20px);
 	padding: 0;
 }
@@ -1183,7 +1183,7 @@ nav.menu ul li a:hover {
 }
 
 @media(max-width: 767px) {
-	.reviews__list:not(.swiper) .item {
+	.reviews__list:not(.swiper-wrapper) .item {
 		width: 100%;
 	}
 }
