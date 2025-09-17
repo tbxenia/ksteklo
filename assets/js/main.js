@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	if(list) {
 		const ninthItem = list.children[7];
 
-		const button = document.createElement('div');
-		button.textContent = 'Показать все!';
-		button.className = 'category__list-item show__more';
+		const button = document.createElement('li');
+		button.textContent = 'Показать все';
+		button.className = 'category__list-item show__more btn';
 
 		if (ninthItem) {
 		ninthItem.parentNode.insertBefore(button, ninthItem.nextSibling);
@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				let nextSibling = div.nextElementSibling;
 				while (nextSibling) {
 					nextSibling.style.display = 'none';
+					nextSibling.classList.add('hidden-element');
 					nextSibling = nextSibling.nextElementSibling;
 				}
 			}
@@ -191,13 +192,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		hideElementsAfterDiv('.show__more');
 		
 		document.querySelector('.show__more').addEventListener('click', function () {
+			if(button.textContent == 'Показать все') {
+				button.textContent = 'Скрыть';
+			} else {
+				button.textContent = 'Показать все';
+			}
 			let tagsElements = document.querySelectorAll('.category__list ul li');
 			
 			tagsElements.forEach((element) => {
-				element.style.display = 'block';
+				element.classList.toggle('active');
 			});
 			
-			document.querySelector('.show__more').remove();
+			document.querySelector('.show__more').classList.add('active');
 		});
 	}
 });
