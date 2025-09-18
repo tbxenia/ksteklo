@@ -383,7 +383,7 @@ a:hover {
 
 	.header__contacts {
 		width: 100%;
-		justify-content: space-between;
+		justify-content: center;
 	}
 
 	.header__phone {
@@ -420,12 +420,10 @@ a:hover {
 		display: none;
 	}
 	
-	.header__contacts {
-		width: 100%;
-	}
-	
 	.header__buttons {
 		width: 100%;
+		justify-content: center;
+        display: flex;
 	}
 
 	.header__buttons a.btn {
@@ -992,7 +990,7 @@ nav.menu ul li a:hover {
 	.how-we-work__list {
 		column-gap: 50px;
 		row-gap: 30px;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 	}
 
@@ -1252,7 +1250,7 @@ nav.menu ul li a:hover {
 .form__content form {
 	display: flex;
 	gap: 20px;
-	align-items: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
 }
 
@@ -1433,6 +1431,11 @@ nav.menu ul li a:hover {
 	.form__content input[type="tel"],
 	.form__content input[type="email"] {
 		width: 200px;
+	}
+	
+	.form-field input[type="checkbox"] + label {
+		font-size: 12px;
+		line-height: 16px;
 	}
 }
 
