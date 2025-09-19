@@ -1888,10 +1888,16 @@ main {
 
 	.detail__info-button {
 		margin-top: 25px;
+		display: flex;
+		justify-content: center;
 	}
 
 	.detail__bottom {
 		margin-bottom: 0;
+	}
+	
+	.detail__bottom-title {
+		text-align: center;
 	}
 }
 
