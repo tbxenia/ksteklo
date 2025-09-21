@@ -955,7 +955,7 @@ nav.menu ul li a:hover {
 	text-align: center;
 	font-size: 18px;
 	line-height: 25px;
-	flex-basis: 0;
+	width: calc(1/5*100% - (1 - 1/5)*40px);
 }
 
 .how-we-work__item .how-we-work__item-icon {
@@ -1004,11 +1004,7 @@ nav.menu ul li a:hover {
 		width: 80px;
 		padding: 20px;
 		margin: 0 auto;
-		display: block;
-	}
-
-	.how-we-work__item {
-		width: calc(1/2*100% - (1 - 1/2)*50px);
+		display: flex;
 	}
 }
 
