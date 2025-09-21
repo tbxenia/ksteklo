@@ -1896,8 +1896,10 @@ main {
 		margin-bottom: 0;
 	}
 	
-	.detail__bottom-title {
+	.detail__bottom .detail__bottom-title {
 		text-align: center;
+		font-size: 16px;
+        line-height: 19px;
 	}
 }
 
