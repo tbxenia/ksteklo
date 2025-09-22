@@ -1083,6 +1083,9 @@ nav.menu ul li a:hover {
 	display: flex;
 	gap: 25px;
 	width: auto !important;
+	max-width: calc(100% - 80px);
+	flex-wrap: wrap;
+	justify-content: center
 }
 
 .swiper-pagination-bullet {
