@@ -1709,7 +1709,6 @@ nav.menu ul li a:hover {
 	text-decoration: none;
 }
 
-.breadcrumbs .breadcrumbs__item:not(:first-child) a:before,
 .breadcrumbs .breadcrumbs__item.active:before {
 	content: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.00925 5.03085L0.06137 8.99941L1.05675 10L6 5.03085L5.93947 4.96915L0.995377 5.16156e-07L-1.66921e-07 1.00059L4.00925 5.03085Z" fill="%2346B9D8"/></svg>');
 	margin-right: 20px;
@@ -1717,6 +1716,10 @@ nav.menu ul li a:hover {
 
 .breadcrumbs .breadcrumbs__item.active {
 	color: var(--accent-red);
+}
+
+.breadcrumbs .breadcrumbs__item.active a {
+	text-decoration: none;
 }
 
 @media(max-width: 576px) {
